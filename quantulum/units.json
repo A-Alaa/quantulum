@@ -1397,7 +1397,7 @@
         "entity": "time",
         "URI": "https://en.wikipedia.org/wiki/Week",
         "dimensions": [],
-        "symbols": []
+        "symbols": ["wk"]
     },
     {
         "name": "month",
@@ -2170,9 +2170,25 @@
     {
         "name": "gram per litre",
         "surfaces": ["gram per litre", "gram per liter"],
-        "entity": "concentration",
+        "entity": "mass concentration",
         "URI": "https://en.wikipedia.org/wiki/Gram_per_litre",
         "dimensions": [{"base": "gram", "power": 1}, {"base": "litre", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "mole per litre",
+        "surfaces": ["mole per litre", "mole per liter", "mol per litre", "mol per liter"],
+        "entity": "molar concentration",
+        "URI": "https://en.wikipedia.org/wiki/Molar_concentration",
+        "dimensions": [{"base": "mole", "power": 1}, {"base": "litre", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "count per litre",
+        "surfaces": ["count per litre", "count per liter"],
+        "entity": "number concentration",
+        "URI": "https://en.wikipedia.org/wiki/Number_density",
+        "dimensions": [{"base": "litre", "power": -1}],
         "symbols": []
     },
     {

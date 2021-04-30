@@ -165,9 +165,19 @@
         "URI": "https://en.wikipedia.org/wiki/Mass_flow_rate"
     },
     {
-        "name": "concentration",
+        "name": "mass concentration",
         "dimensions": [{"base": "mass", "power": 1}, {"base": "volume", "power": -1}],
-        "URI": "https://en.wikipedia.org/wiki/Concentration"
+        "URI": "https://en.wikipedia.org/wiki/Mass_concentration_(chemistry)"
+    },
+    {
+        "name": "number concentration",
+        "dimensions": [{"base": "dimensionless", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Number_density"
+    },
+    {
+        "name": "molar concentration",
+        "dimensions": [{"base": "amount of substance", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Molar_concentration"
     },
     {
         "name": "dynamic viscosity",

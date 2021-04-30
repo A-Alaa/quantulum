@@ -107,17 +107,15 @@ def callback(pattern):
 def get_values(item):
     """Extract value from regex hit."""
     fracs = r'|'.join(r.UNI_FRAC)
-
     value = item.group(2)
-    value = re.sub(r'(?<=\d)(%s)10' % r.MULTIPLIERS, 'e', value)
+    value = re.sub(r'(?<=\d)(%s)10(\^?(?=-)|\^)' % r.MULTIPLIERS, 'e', str(value))
     value = re.sub(fracs, callback, value, re.IGNORECASE)
     value = re.sub(' +', ' ', value)
 
     range_separator = re.findall(r'\d+ ?(-|and|(?:- ?)?to) ?\d', value)
     uncer_separator = re.findall(r'\d+ ?(\+/-|±) ?\d', value)
     fract_separator = re.findall(r'\d+/\d+', value)
-
-    uncertainty = None
+    uncertainty = 0
     if range_separator:
         values = value.split(range_separator[0])
         values = [float(re.sub(r'-$', '', i)) for i in values]
@@ -428,7 +426,7 @@ def parse(text, verbose=False):
             quantities += objs
 
     if verbose:
-        root.level = level
+        root.setLevel(level)
 
     return quantities
 

@@ -13,13 +13,8 @@ import logging
 # Dependencies
 import wikipedia
 from stemming.porter2 import stem
-try:
-    from sklearn.linear_model import SGDClassifier
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    USE_CLF = True
-except ImportError:
-    USE_CLF = False
-
+from sklearn.linear_model import SGDClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
 # Quantulum
 from . import load as l
 
@@ -29,9 +24,8 @@ def download_wiki():
     """Download WikiPedia pages of ambiguous units."""
     ambiguous = [i for i in l.UNITS.items() if len(i[1]) > 1]
     ambiguous += [i for i in l.DERIVED_ENT.items() if len(i[1]) > 1]
-    pages = set([(j.name, j.uri) for i in ambiguous for j in i[1]])
+    pages = {(j.name, j.uri) for i in ambiguous for j in i[1]}
 
-    print
     objs = []
     for num, page in enumerate(pages):
 
@@ -39,24 +33,26 @@ def download_wiki():
         obj['_id'] = obj['url'].replace('https://en.wikipedia.org/wiki/', '')
         obj['clean'] = obj['_id'].replace('_', ' ')
 
-        print '---> Downloading %s (%d of %d)' % \
-              (obj['clean'], num + 1, len(pages))
+        print('---> Downloading %s (%d of %d)' % \
+              (obj['clean'], num + 1, len(pages)))
 
-        obj['text'] = wikipedia.page(obj['clean']).content
+        obj['text'] = wikipedia.page(obj['clean'], auto_suggest=False).content
         obj['unit'] = page[0]
         objs.append(obj)
 
     path = os.path.join(l.TOPDIR, 'wiki.json')
     os.remove(path)
-    json.dump(objs, open(path, 'w'), indent=4, sort_keys=True)
 
-    print '\n---> All done.\n'
+    with open(path, 'w') as file:
+        json.dump(objs, file, indent=4, sort_keys=True)
+
+    print('\n---> All done.\n')
 
 
 ###############################################################################
 def clean_text(text):
     """Clean text for TFIDF."""
-    new_text = re.sub(ur'\p{P}+', ' ', text)
+    new_text = re.sub(r'[^\w\s]', ' ', text, re.UNICODE)
 
     new_text = [stem(i) for i in new_text.lower().split() if not
                 re.findall(r'[0-9]', i)]
@@ -72,16 +68,23 @@ def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
     if download:
         download_wiki()
 
+    print('\n---> Training..\n')
     path = os.path.join(l.TOPDIR, 'train.json')
     training_set = json.load(open(path))
     path = os.path.join(l.TOPDIR, 'wiki.json')
     wiki_set = json.load(open(path))
 
-    target_names = list(set([i['unit'] for i in training_set + wiki_set]))
+    target_names = list({i['unit'] for i in training_set + wiki_set})
     train_data, train_target = [], []
+
     for example in training_set + wiki_set:
         train_data.append(clean_text(example['text']))
         train_target.append(target_names.index(example['unit']))
+
+    with open(os.path.join(l.TOPDIR, '_debug_train_data.json'), 'w') as file:
+        json.dump(train_data, file, indent=4, sort_keys=True)
+    with open(os.path.join(l.TOPDIR, '_debug_target_names.json'), 'w') as file:
+        json.dump(target_names, file, indent=4, sort_keys=True)
 
     tfidf_model = TfidfVectorizer(sublinear_tf=True,
                                   ngram_range=ngram_range,
@@ -90,7 +93,7 @@ def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
     matrix = tfidf_model.fit_transform(train_data)
 
     if parameters is None:
-        parameters = {'loss': 'log', 'penalty': 'l2', 'n_iter': 50,
+        parameters = {'loss': 'log', 'penalty': 'l2', 'max_iter': 50,
                       'alpha': 0.00001, 'fit_intercept': True}
 
     clf = SGDClassifier(**parameters).fit(matrix, train_target)
@@ -98,22 +101,28 @@ def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
            'clf': clf,
            'target_names': target_names}
     path = os.path.join(l.TOPDIR, 'clf.pickle')
-    pickle.dump(obj, open(path, 'w'))
+    with open(path, 'wb') as file:
+        pickle.dump(obj, file)
 
 
 ###############################################################################
 def load_classifier():
     """Train the intent classifier."""
     path = os.path.join(l.TOPDIR, 'clf.pickle')
-    obj = pickle.load(open(path, 'r'))
+
+    with open(path, 'rb') as file:
+        obj = pickle.load(file)
 
     return obj['tfidf_model'], obj['clf'], obj['target_names']
 
-if USE_CLF:
+try:
     TFIDF_MODEL, CLF, TARGET_NAMES = load_classifier()
-else:
-    TFIDF_MODEL, CLF, TARGET_NAMES = None, None, None
-
+except Exception as e:
+    logging.debug(f'\t{e.__doc__}\n'
+                  '\t{e.message}\n'
+                  '\tError loading trained model. Retraining..')
+    train_classifier()
+    TFIDF_MODEL, CLF, TARGET_NAMES = load_classifier()
 
 ###############################################################################
 def disambiguate_entity(key, text):

@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+
 
 """quantulum tests."""
 
@@ -54,19 +53,16 @@ def wiki_test(page='CERN'):
     parsed = p.parse(content)
     parts = int(round(len(content) * 1.0 / 1000))
 
-    print
     end_char = 0
     for num, chunk in enumerate(range(parts)):
         _ = os.system('clear')
-        print
         quants = [j for j in parsed if chunk * 1000 < j.span[0] < (chunk + 1) *
                   1000]
         beg_char = max(chunk * 1000, end_char)
         text, end_char = embed_text(quants, beg_char, chunk, content)
-        print COLOR2 % text
-        print
+        print(COLOR2 % text)
         try:
-            _ = raw_input('--------- End part %d of %d\n' % (num + 1, parts))
+            _ = input('--------- End part %d of %d\n' % (num + 1, parts))
         except (KeyboardInterrupt, EOFError):
             return
 
@@ -93,15 +89,14 @@ def get_quantity(test, item):
         else:
             print ('Could not find %s, provide "dimensions" and'
                    ' "entity"' % item['unit'])
-            return
         unit = c.Unit(name=item['unit'],
                       dimensions=item['dimensions'],
                       entity=entity)
     try:
-        span = re.finditer(re.escape(item['surface']),
-                           test['req']).next().span()
+        span = next(re.finditer(re.escape(item['surface']),
+                           test['req'])).span()
     except StopIteration:
-        print 'Surface mismatch for "%s"' % test['req']
+        print('Surface mismatch for "%s"' % test['req'])
         return
 
     uncert = None
@@ -146,7 +141,10 @@ class EndToEndTests(unittest.TestCase):
     def test_parse(self):
         """Test for parser.parse() function."""
         all_tests = load_tests()
+
         for test in sorted(all_tests, key=lambda x: len(x['req'])):
+            # print(p.parse(test['req'])[0].__dict__)
+            # print(test['res'][0].__dict__)
             self.assertEqual(p.parse(test['req']), test['res'])
 
 

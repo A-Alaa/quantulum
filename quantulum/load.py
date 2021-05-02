@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """quantulum unit and entity loading functions."""
@@ -8,16 +7,9 @@ import os
 import json
 from collections import defaultdict
 
-# Dependencies
-import inflect
-
 # Quantulum
 from . import classes as c
-
-TOPDIR = os.path.dirname(__file__) or "."
-
-PLURALS = inflect.engine()
-
+from .classes import Reference as r
 
 ###############################################################################
 def get_key_from_dimensions(dimensions):
@@ -56,9 +48,9 @@ def get_dimension_permutations(entities, dimensions):
 
 
 ###############################################################################
-def load_entities():
+def load_entities(filename='entities.json'):
     """Load entities from JSON file."""
-    path = os.path.join(TOPDIR, 'entities.json')
+    path = os.path.join(r.TOPDIR, filename)
     entities = json.load(open(path))
     names = [i['name'] for i in entities]
 
@@ -82,9 +74,6 @@ def load_entities():
             dimensions_ent[key].append(entities[ent])
 
     return entities, dimensions_ent
-
-ENTITIES, DERIVED_ENT = load_entities()
-
 
 ###############################################################################
 def get_dimensions_units(names):
@@ -110,22 +99,22 @@ def get_dimensions_units(names):
 
 
 ###############################################################################
-def load_units():
+def load_units(filename='units.json'):
     """Load units from JSON file."""
     names = {}
     lowers = defaultdict(list)
     symbols = defaultdict(list)
     surfaces = defaultdict(list)
-    for unit in json.load(open(os.path.join(TOPDIR, 'units.json'))):
+    for unit in json.load(open(os.path.join(r.TOPDIR, filename))):
 
         try:
             assert unit['name'] not in names
         except AssertionError:
-            msg = 'Two units with same name in units.json: %s' % unit['name']
+            msg = f"Two units with same name in {filename}: {unit['name']}"
             raise Exception(msg)
 
         obj = c.Unit(name=unit['name'], surfaces=unit['surfaces'],
-                     entity=ENTITIES[unit['entity']], uri=unit['URI'],
+                     entity=r.ENTITIES[unit['entity']], uri=unit['URI'],
                      symbols=unit['symbols'], dimensions=unit['dimensions'])
 
         names[unit['name']] = obj
@@ -147,10 +136,10 @@ def load_units():
                 index = split.index('degree')
             if index is not None:
                 plural = ' '.join([i if num != index else
-                                   PLURALS.plural(split[index]) for num, i in
+                                   r.PLURALS.plural(split[index]) for num, i in
                                    enumerate(split)])
             else:
-                plural = PLURALS.plural(surface)
+                plural = r.PLURALS.plural(surface)
             if plural != surface:
                 surfaces[plural].append(obj)
                 lowers[plural.lower()].append(obj)
@@ -159,4 +148,5 @@ def load_units():
 
     return names, surfaces, lowers, symbols, dimensions_uni
 
-NAMES, UNITS, LOWER_UNITS, SYMBOLS, DERIVED_UNI = load_units()
+
+

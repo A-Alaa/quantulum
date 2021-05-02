@@ -16,14 +16,15 @@ from stemming.porter2 import stem
 from sklearn.linear_model import SGDClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 # Quantulum
-from . import load as l
+from . import classes as c
+from .classes import Reference as r
 
 
 ###############################################################################
-def download_wiki():
+def download_wiki(filename):
     """Download WikiPedia pages of ambiguous units."""
-    ambiguous = [i for i in l.UNITS.items() if len(i[1]) > 1]
-    ambiguous += [i for i in l.DERIVED_ENT.items() if len(i[1]) > 1]
+    ambiguous = [i for i in r.UNITS.items() if len(i[1]) > 1]
+    ambiguous += [i for i in r.DERIVED_ENT.items() if len(i[1]) > 1]
     pages = {(j.name, j.uri) for i in ambiguous for j in i[1]}
 
     objs = []
@@ -40,8 +41,9 @@ def download_wiki():
         obj['unit'] = page[0]
         objs.append(obj)
 
-    path = os.path.join(l.TOPDIR, 'wiki.json')
-    os.remove(path)
+    path = os.path.join(r.TOPDIR, filename)
+    if os.path.exists(path):
+        os.remove(path)
 
     with open(path, 'w') as file:
         json.dump(objs, file, indent=4, sort_keys=True)
@@ -63,15 +65,15 @@ def clean_text(text):
 
 
 ###############################################################################
-def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
+def train_classifier(name_prefix, download=True, parameters=None, ngram_range=(1, 1)):
     """Train the intent classifier."""
     if download:
-        download_wiki()
+        download_wiki(f'{name_prefix}_wiki.json')
 
     print('\n---> Training..\n')
-    path = os.path.join(l.TOPDIR, 'train.json')
-    training_set = json.load(open(path))
-    path = os.path.join(l.TOPDIR, 'wiki.json')
+    path = os.path.join(r.TOPDIR, f'{name_prefix}_train.json')
+    training_set = json.load(open(path)) if os.path.exists(path) else []
+    path = os.path.join(r.TOPDIR, f'{name_prefix}_wiki.json')
     wiki_set = json.load(open(path))
 
     target_names = list({i['unit'] for i in training_set + wiki_set})
@@ -81,9 +83,9 @@ def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
         train_data.append(clean_text(example['text']))
         train_target.append(target_names.index(example['unit']))
 
-    with open(os.path.join(l.TOPDIR, '_debug_train_data.json'), 'w') as file:
+    with open(os.path.join(r.TOPDIR, '_debug_train_data.json'), 'w') as file:
         json.dump(train_data, file, indent=4, sort_keys=True)
-    with open(os.path.join(l.TOPDIR, '_debug_target_names.json'), 'w') as file:
+    with open(os.path.join(r.TOPDIR, '_debug_target_names.json'), 'w') as file:
         json.dump(target_names, file, indent=4, sort_keys=True)
 
     tfidf_model = TfidfVectorizer(sublinear_tf=True,
@@ -100,44 +102,35 @@ def train_classifier(download=True, parameters=None, ngram_range=(1, 1)):
     obj = {'tfidf_model': tfidf_model,
            'clf': clf,
            'target_names': target_names}
-    path = os.path.join(l.TOPDIR, 'clf.pickle')
+    path = os.path.join(r.TOPDIR, f'{name_prefix}_clf.pickle')
     with open(path, 'wb') as file:
         pickle.dump(obj, file)
 
 
 ###############################################################################
-def load_classifier():
+def load_classifier(name_prefix):
     """Train the intent classifier."""
-    path = os.path.join(l.TOPDIR, 'clf.pickle')
+    path = os.path.join(r.TOPDIR, f'{name_prefix}_clf.pickle')
 
     with open(path, 'rb') as file:
         obj = pickle.load(file)
 
     return obj['tfidf_model'], obj['clf'], obj['target_names']
 
-try:
-    TFIDF_MODEL, CLF, TARGET_NAMES = load_classifier()
-except Exception as e:
-    logging.debug(f'\t{e.__doc__}\n'
-                  '\t{e.message}\n'
-                  '\tError loading trained model. Retraining..')
-    train_classifier()
-    TFIDF_MODEL, CLF, TARGET_NAMES = load_classifier()
-
 ###############################################################################
 def disambiguate_entity(key, text):
     """Resolve ambiguity between entities with same dimensionality."""
-    new_ent = l.DERIVED_ENT[key][0]
+    new_ent = r.DERIVED_ENT[key][0]
 
-    if len(l.DERIVED_ENT[key]) > 1:
-        transformed = TFIDF_MODEL.transform([text])
-        scores = CLF.predict_proba(transformed).tolist()[0]
-        scores = sorted(zip(scores, TARGET_NAMES), key=lambda x: x[0],
+    if len(r.DERIVED_ENT[key]) > 1:
+        transformed = r.TFIDF_MODEL.transform([text])
+        scores = r.CLF.predict_proba(transformed).tolist()[0]
+        scores = sorted(zip(scores, r.TARGET_NAMES), key=lambda x: x[0],
                         reverse=True)
-        names = [i.name for i in l.DERIVED_ENT[key]]
+        names = [i.name for i in r.DERIVED_ENT[key]]
         scores = [i for i in scores if i[1] in names]
         try:
-            new_ent = l.ENTITIES[scores[0][1]]
+            new_ent = r.ENTITIES[scores[0][1]]
         except IndexError:
             logging.debug('\tAmbiguity not resolved for "%s"', str(key))
 
@@ -151,21 +144,21 @@ def disambiguate_unit(unit, text):
 
     Distinguish between units that have same names, symbols or abbreviations.
     """
-    new_unit = l.UNITS[unit]
+    new_unit = r.UNITS[unit]
     if not new_unit:
-        new_unit = l.LOWER_UNITS[unit.lower()]
+        new_unit = r.LOWER_UNITS[unit.lower()]
         if not new_unit:
             raise KeyError('Could not find unit "%s"' % unit)
 
     if len(new_unit) > 1:
-        transformed = TFIDF_MODEL.transform([clean_text(text)])
-        scores = CLF.predict_proba(transformed).tolist()[0]
-        scores = sorted(zip(scores, TARGET_NAMES), key=lambda x: x[0],
+        transformed = r.TFIDF_MODEL.transform([clean_text(text)])
+        scores = r.CLF.predict_proba(transformed).tolist()[0]
+        scores = sorted(zip(scores, r.TARGET_NAMES), key=lambda x: x[0],
                         reverse=True)
         names = [i.name for i in new_unit]
         scores = [i for i in scores if i[1] in names]
         try:
-            final = l.UNITS[scores[0][1]][0]
+            final = r.UNITS[scores[0][1]][0]
             logging.debug('\tAmbiguity resolved for "%s" (%s)', unit, scores)
         except IndexError:
             logging.debug('\tAmbiguity not resolved for "%s"', unit)

@@ -1,5 +1,9 @@
 """quantulum init."""
 
+from quantulum.quantulum.initialize import init
+from quantulum.quantulum.parser import parse
+
+
 VERSION = (0, 1, 16)
 
 __version__ = '.'.join([str(i) for i in VERSION])

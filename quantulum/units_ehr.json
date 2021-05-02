@@ -1,0 +1,842 @@
+[
+    {
+        "name": "dimensionless",
+        "surfaces": ["dimensionless"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Dimensionless_quantity",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "percentage",
+        "surfaces": ["percentage", "percent"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Percentage",
+        "dimensions": [],
+        "symbols": ["%", "pct", "pct."]
+    },
+    {
+        "name": "per mille",
+        "surfaces": ["per mille", "permill", "permil", "permille", "per mil", "per mill"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Per_mille",
+        "dimensions": [],
+        "symbols": ["‰"]
+    },
+    {
+        "name": "parts-per-million",
+        "surfaces": ["parts-per-million", "parts per million"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Parts-per_notation",
+        "dimensions": [],
+        "symbols": ["ppm"]
+    },
+    {
+        "name": "count",
+        "surfaces": ["instance", "time", "count"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Count_data",
+        "dimensions": [],
+        "symbols": ["#"]
+    },
+    {
+        "name": "turn",
+        "surfaces": ["turn", "revolution", "cycle", "circle"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Turn_(geometry)",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "beat",
+        "surfaces": ["heartbeat", "beat", "cardiac circle"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Cardiac_cycle",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "cell",
+        "surfaces": ["cell"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Complete_blood_count",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "cigarettes",
+        "surfaces": ["cigarette", "cigare", "cig"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Cigarette",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "meter",
+        "surfaces": ["metre", "meter"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Metre",
+        "dimensions": [],
+        "symbols": ["m"]
+    },
+    {
+        "name": "decameter",
+        "surfaces": ["decametre", "decameter", "dekametre", "dekameter"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Decametre",
+        "dimensions": [],
+        "symbols": ["dam", "Dm", "dkm"]
+    },
+    {
+        "name": "decimeter",
+        "surfaces": ["decimetre", "decimeter"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Decimetre",
+        "dimensions": [],
+        "symbols": ["dm"]
+    },
+    {
+        "name": "centimeter",
+        "surfaces": ["centimeter", "centimetre"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Centimetre",
+        "dimensions": [],
+        "symbols": ["cm"]
+    },
+    {
+        "name": "millimeter",
+        "surfaces": ["millimeter", "millimetre"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Millimetre",
+        "dimensions": [],
+        "symbols": ["mm"]
+    },
+    {
+        "name": "micrometer",
+        "surfaces": ["micrometre", "micrometer", "micron"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Micrometre",
+        "dimensions": [],
+        "symbols": ["µm"]
+    },
+    {
+        "name": "nanometer",
+        "surfaces": ["nanometre", "nanometer"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Nanometre",
+        "dimensions": [],
+        "symbols": ["nm"]
+    },
+    {
+        "name": "picometer",
+        "surfaces": ["picometre", "picometer"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Picometre",
+        "dimensions": [],
+        "symbols": ["pm"]
+    },
+    {
+        "name": "foot",
+        "surfaces": ["foot"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Foot_(unit)",
+        "dimensions": [],
+        "symbols": ["ft", "'", "′"]
+    },
+    {
+        "name": "inch",
+        "surfaces": ["inch"],
+        "entity": "length",
+        "URI": "https://en.wikipedia.org/wiki/Inch",
+        "dimensions": [],
+        "symbols": ["in", "\"", "″"]
+    },
+    {
+        "name": "kilogram",
+        "surfaces": ["kilogram", "kilogramme", "kilo"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Kilogram",
+        "dimensions": [],
+        "symbols": ["kg", "KG", "Kg"]
+    },
+    {
+        "name": "gram",
+        "surfaces": ["gram", "gramme"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Gram",
+        "dimensions": [],
+        "symbols": ["g", "gm", "GM", "G", "gr"]
+    },
+    {
+        "name": "milligram",
+        "surfaces": ["milligram", "milligramme"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Kilogram#SI_multiples",
+        "dimensions": [],
+        "symbols": ["mg", "MG"]
+    },
+    {
+        "name": "microgram",
+        "surfaces": ["microgram", "microgramme"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Microgram",
+        "dimensions": [],
+        "symbols": ["µg", "mcg", "ug", "UG"]
+    },
+    {
+        "name": "nanogram",
+        "surfaces": ["nanogram"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)#nanogram",
+        "dimensions": [],
+        "symbols": ["ng"]
+    },
+    {
+        "name": "picogram",
+        "surfaces": ["picogram"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)",
+        "dimensions": [],
+        "symbols": ["pg", "PG"]
+    },
+    {
+        "name": "pound-mass",
+        "surfaces": ["pound", "pound-mass"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Pound_(mass)",
+        "dimensions": [],
+        "symbols": ["lb", "lbm"]
+    },
+    {
+        "name": "ounce",
+        "surfaces": ["ounce"],
+        "entity": "mass",
+        "URI": "https://en.wikipedia.org/wiki/Ounce",
+        "dimensions": [],
+        "symbols": ["oz", "℥"]
+    },
+    {
+        "name": "cubic meter",
+        "surfaces": ["cubic metre", "cubic meter", "kiloliter", "kilolitre"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_metre",
+        "dimensions": [{"base": "meter", "power": 3}],
+        "symbols": ["cu m", "kL"]
+    },
+    {
+        "name": "milliliter",
+        "surfaces": ["milliliter", "cubic centimetre", "cubic centimeter", "millilitre"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_centimetre",
+        "dimensions": [{"base": "centimeter", "power": 3}],
+        "symbols": ["cc", "ccm", "mL", "ml", "ML"]
+    },
+    {
+        "name": "cubic millimeter",
+        "surfaces": ["microliter", "microlitre", "cubic millimetre", "cubic millimeter"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_metre",
+        "dimensions": [{"base": "millimeter", "power": 3}],
+        "symbols": ["µl", "µL", "ul", "uL"]
+    },
+    {
+        "name": "liter",
+        "surfaces": ["litre", "liter", "cubic decimetre", "cubic decimeter"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Litre",
+        "dimensions": [{"base": "decimeter", "power": 3}],
+        "symbols": ["l", "L", "ltr"]
+    },
+    {
+        "name": "fluid ounce",
+        "surfaces": ["fluid ounce"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Fluid_ounce",
+        "dimensions": [],
+        "symbols": ["fl oz", "oz fl", "floz", "ozfl"]
+    },
+    {
+        "name": "cubic inch",
+        "surfaces": ["cubic inch", "cu inch"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_inch",
+        "dimensions": [{"base": "inch", "power": 3}],
+        "symbols": ["cu in"]
+    },
+    {
+        "name": "acre foot",
+        "surfaces": ["acre foot", "acre-foot"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Acre-foot",
+        "dimensions": [],
+        "symbols": ["ac*ft"]
+    },
+    {
+        "name": "degree celsius",
+        "surfaces": ["degree celsius", "Celsius", "centigrade", "degree centigrade", "deg centigrade"],
+        "entity": "temperature",
+        "URI": "https://en.wikipedia.org/wiki/Celsius",
+        "dimensions": [],
+        "symbols": ["C", "°C", "'C", "deg C", "degC", "degrees C"]
+    },
+    {
+        "name": "degree fahrenheit",
+        "surfaces": ["degree fahrenheit", "Fahrenheit"],
+        "entity": "temperature",
+        "URI": "https://en.wikipedia.org/wiki/Fahrenheit",
+        "dimensions": [],
+        "symbols": ["F", "°F", "'F", "deg F"]
+    },
+    {
+        "name": "square meter",
+        "surfaces": ["square metre", "square meter"],
+        "entity": "area",
+        "URI": "https://en.wikipedia.org/wiki/Square_metre",
+        "dimensions": [{"base": "meter", "power": 2}],
+        "symbols": ["sq m"]
+    },
+    {
+        "name": "square inch",
+        "surfaces": ["square inch"],
+        "entity": "area",
+        "URI": "https://en.wikipedia.org/wiki/Square_inch",
+        "dimensions": [{"base": "inch", "power": 2}],
+        "symbols": ["sq in"]
+    },
+    {
+        "name": "millipascal",
+        "surfaces": ["millipascal"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Pascal",
+        "dimensions": [],
+        "symbols": ["mPa"]
+    },
+    {
+        "name": "pascal",
+        "surfaces": ["pascal"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Pascal",
+        "dimensions": [],
+        "symbols": ["Pa"]
+    },
+    {
+        "name": "kilopascal",
+        "surfaces": ["kilopascal"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Pascal",
+        "dimensions": [],
+        "symbols": ["kPa"]
+    },
+    {
+        "name": "megapascal",
+        "surfaces": ["megapascal"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Pascal",
+        "dimensions": [],
+        "symbols": ["MPa"]
+    },
+    {
+        "name": "gigapascal",
+        "surfaces": ["gigapascal"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Pascal",
+        "dimensions": [],
+        "symbols": ["GPa"]
+    },
+    {
+        "name": "bar",
+        "surfaces": ["bar"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Bar_(unit)",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "millibar",
+        "surfaces": ["millibar"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Bar_(unit)",
+        "dimensions": [],
+        "symbols": ["mbar"]
+    },
+    {
+        "name": "microbar",
+        "surfaces": ["microbar"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Bar_(unit)",
+        "dimensions": [],
+        "symbols": ["µbar"]
+    },
+    {
+        "name": "millimeter of mercury",
+        "surfaces": ["millimetre of mercury", "millimetre mercury", "millimeter of mercury", "millimeter mercury"],
+        "entity": "pressure",
+        "URI": "https://en.wikipedia.org/wiki/Millimeter_of_mercury",
+        "dimensions": [],
+        "symbols": ["mmHg", "mm Hg"]
+    },
+    {
+        "name": "joule",
+        "surfaces": ["joule"],
+        "entity": "energy",
+        "URI": "https://en.wikipedia.org/wiki/Joule",
+        "dimensions": [],
+        "symbols": ["J"]
+    },
+    {
+        "name": "millijoule",
+        "surfaces": ["millijoule"],
+        "entity": "energy",
+        "URI": "https://en.wikipedia.org/wiki/Joule",
+        "dimensions": [],
+        "symbols": ["mJ"]
+    },
+    {
+        "name": "kilojoule",
+        "surfaces": ["kilojoule"],
+        "entity": "energy",
+        "URI": "https://en.wikipedia.org/wiki/Joule",
+        "dimensions": [],
+        "symbols": ["kJ"]
+    },
+    {
+        "name": "calorie",
+        "surfaces": ["calorie", "small calorie", "gram calorie"],
+        "entity": "energy",
+        "URI": "https://en.wikipedia.org/wiki/Calorie",
+        "dimensions": [],
+        "symbols": ["cal"]
+    },
+    {
+        "name": "kilocalorie",
+        "surfaces": ["kilocalorie", "large calorie", "kilogram calorie"],
+        "entity": "energy",
+        "URI": "https://en.wikipedia.org/wiki/Calorie",
+        "dimensions": [],
+        "symbols": ["kcal", "Cal"]
+    },
+    {
+        "name": "second",
+        "surfaces": ["second"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Second",
+        "dimensions": [],
+        "symbols": ["s", "sec", "\"", "″"]
+    },
+    {
+        "name": "millisecond",
+        "surfaces": ["millisecond"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Millisecond",
+        "dimensions": [],
+        "symbols": ["ms", "msec"]
+    },
+    {
+        "name": "microsecond",
+        "surfaces": ["microsecond"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Microsecond",
+        "dimensions": [],
+        "symbols": ["μs", "μsec"]
+    },
+    {
+        "name": "nanosecond",
+        "surfaces": ["nanosecond"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Nanosecond",
+        "dimensions": [],
+        "symbols": ["ns", "nsec"]
+    },
+    {
+        "name": "minute",
+        "surfaces": ["minute"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Minute",
+        "dimensions": [],
+        "symbols": ["min", "'", "′"]
+    },
+    {
+        "name": "hour",
+        "surfaces": ["hour"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Hour",
+        "dimensions": [],
+        "symbols": ["h", "hr"]
+    },
+    {
+        "name": "day",
+        "surfaces": ["day"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Day",
+        "dimensions": [],
+        "symbols": ["d"]
+    },
+    {
+        "name": "week",
+        "surfaces": ["week"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Week",
+        "dimensions": [],
+        "symbols": ["wk", "wk."]
+    },
+    {
+        "name": "month",
+        "surfaces": ["month"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Month",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "year",
+        "surfaces": ["year"],
+        "entity": "time",
+        "URI": "https://en.wikipedia.org/wiki/Year",
+        "dimensions": [],
+        "symbols": ["y", "yr"]
+    },
+    {
+        "name": "degree angle",
+        "surfaces": ["degree", "degree of arc", "arc degree", "arcdegree", "angular degree"],
+        "entity": "angle",
+        "URI": "https://en.wikipedia.org/wiki/Degree_(angle)",
+        "dimensions": [],
+        "symbols": ["°", "deg", "arcdeg"]
+    },
+    {
+        "name": "radian",
+        "surfaces": ["radian"],
+        "entity": "angle",
+        "URI": "https://en.wikipedia.org/wiki/Radian",
+        "dimensions": [],
+        "symbols": ["rad", "㎭"]
+    },
+    {
+        "name": "steradian",
+        "surfaces": ["steradian", "square radian"],
+        "entity": "angle",
+        "URI": "https://en.wikipedia.org/wiki/Steradian",
+        "dimensions": [],
+        "symbols": ["sr"]
+    },
+    {
+        "name": "poise",
+        "surfaces": ["poise"],
+        "entity": "dynamic viscosity",
+        "URI": "https://en.wikipedia.org/wiki/Poise_(unit)",
+        "dimensions": [],
+        "symbols": ["P"]
+    },
+    {
+        "name": "centipoise",
+        "surfaces": ["centipoise"],
+        "entity": "dynamic viscosity",
+        "URI": "https://en.wikipedia.org/wiki/Poise",
+        "dimensions": [],
+        "symbols": ["cP"]
+    },
+    {
+        "name": "millipascal second",
+        "surfaces": ["millipascal second"],
+        "entity": "dynamic viscosity",
+        "URI": "https://en.wikipedia.org/wiki/Viscosity#Units",
+        "dimensions": [{"base": "millipascal", "power": 1}, {"base": "second", "power": 1}],
+        "symbols": ["mPa.s", "mPas"]
+    },
+    {
+        "name": "stokes",
+        "surfaces": ["stokes"],
+        "entity": "kinematic viscosity",
+        "URI": "https://en.wikipedia.org/wiki/Viscosity#Stokes_.28unit.29",
+        "dimensions": [],
+        "symbols": ["St"]
+    },
+    {
+        "name": "centistokes",
+        "surfaces": ["centistokes"],
+        "entity": "kinematic viscosity",
+        "URI": "https://en.wikipedia.org/wiki/Viscosity#Stokes_.28unit.29",
+        "dimensions": [],
+        "symbols": ["cSt"]
+    },
+    {
+        "name": "rhe",
+        "surfaces": ["rhe", "reciprocal poise"],
+        "entity": "fluidity",
+        "URI": "https://en.wikipedia.org/wiki/Viscosity#Fluidity",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "decibel",
+        "surfaces": ["decibel"],
+        "entity": "sound level",
+        "URI": "https://en.wikipedia.org/wiki/Decibel",
+        "dimensions": [],
+        "symbols": ["dB"]
+    },
+    {
+        "name": "cycle per second",
+        "surfaces": ["cycle per second"],
+        "entity": "instance frequency",
+        "URI": "https://en.wikipedia.org/wiki/Cycle_per_second",
+        "dimensions": [{"base": "turn", "power": 1}, {"base": "second", "power": -1}],
+        "symbols": ["cps"]
+    },
+    {
+        "name": "beats per minute",
+        "surfaces": ["beats per minute", "heartbeats per minute"],
+        "entity": "instance frequency",
+        "URI": "https://en.wikipedia.org/wiki/Heart_rate",
+        "dimensions": [{"base": "beat", "power": 1}, {"base": "minute", "power": -1}],
+        "symbols": ["bpm", "BPM"]
+    },
+    {
+        "name": "hertz",
+        "surfaces": ["hertz", "revolutions per second"],
+        "entity": "frequency",
+        "URI": "https://en.wikipedia.org/wiki/Hertz",
+        "dimensions": [],
+        "symbols": ["Hz", "㎐", "rps"]
+    },
+    {
+        "name": "inverse second",
+        "surfaces": ["inverse second", "reciprocal second", "per second"],
+        "entity": "frequency",
+        "URI": "https://en.wikipedia.org/wiki/Inverse_second",
+        "dimensions": [{"base": "second", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "megahertz",
+        "surfaces": ["megahertz"],
+        "entity": "frequency",
+        "URI": "https://en.wikipedia.org/wiki/Hertz",
+        "dimensions": [],
+        "symbols": ["MHz", "M㎐"]
+    },
+    {
+        "name": "international unit",
+        "surfaces": ["international unit"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/International_unit",
+        "dimensions": [],
+        "symbols": ["IU", "iU", "iu", "i.u."]
+    },
+    {
+        "name": "milliIU",
+        "surfaces": ["milliIU"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/International_unit",
+        "dimensions": [],
+        "symbols": ["mIU", "MIU"]
+    },
+    {
+        "name": "kiloIU",
+        "surfaces": ["kiloIU"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/International_unit",
+        "dimensions": [],
+        "symbols": ["kIU", "KIU"]
+    },
+    {
+        "name": "unit",
+        "surfaces": ["unit"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
+        "dimensions": [],
+        "symbols": ["U", "u"]
+    },
+    {
+        "name": "milliunit",
+        "surfaces": ["milliunit"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
+        "dimensions": [],
+        "symbols": ["mU", "mu"]
+    },
+    {
+        "name": "kilounit",
+        "surfaces": ["unit"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
+        "dimensions": [],
+        "symbols": ["KU", "kU", "ku"]
+    },
+    {
+        "name": "mole",
+        "surfaces": ["mole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["mol"]
+    },
+    {
+        "name": "osmole",
+        "surfaces": ["osmole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["osmol", "Osmol", "Osm", "osm"]
+    },
+    {
+        "name": "milliosmole",
+        "surfaces": ["milliosmole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["mosmol", "mOsmol", "mOsm", "mosm"]
+    },
+    {
+        "name": "millimole",
+        "surfaces": ["millimole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["mmol", "MMOL"]
+    },
+    {
+        "name": "micromole",
+        "surfaces": ["micromole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["umol", "Umol", "UMOL", "mcmol", "MCMOL", "micmol"]
+    },
+    {
+        "name": "nanomole",
+        "surfaces": ["nanomole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["nmol", "NMOL"]
+    },
+    {
+        "name": "picomole",
+        "surfaces": ["picomole"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/Mole_(unit)",
+        "dimensions": [],
+        "symbols": ["pmol", "PMOL"]
+    },
+    {
+        "name": "gram per cubic centimeter",
+        "surfaces": ["gram per cubic centimetre", "gram per cubic centimeter"],
+        "entity": "density",
+        "URI": "https://en.wikipedia.org/wiki/Gram_per_cubic_centimetre",
+        "dimensions": [{"base": "gram", "power": 1}, {"base": "centimeter", "power": -3}],
+        "symbols": []
+    },
+    {
+        "name": "kilogram per cubic meter",
+        "surfaces": ["kilogram per cubic metre", "kilogram per cubic meter"],
+        "entity": "density",
+        "URI": "https://en.wikipedia.org/wiki/Kilogram_per_cubic_metre",
+        "dimensions": [{"base": "kilogram", "power": 1}, {"base": "meter", "power": -3}],
+        "symbols": []
+    },
+    {
+        "name": "gram per liter",
+        "surfaces": ["gram per litre", "gram per liter"],
+        "entity": "mass concentration",
+        "URI": "https://en.wikipedia.org/wiki/Gram_per_litre",
+        "dimensions": [{"base": "gram", "power": 1}, {"base": "liter", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "mole per liter",
+        "surfaces": ["mole per litre", "mole per liter", "mol per litre", "mol per liter"],
+        "entity": "molar concentration",
+        "URI": "https://en.wikipedia.org/wiki/Molar_concentration",
+        "dimensions": [{"base": "mole", "power": 1}, {"base": "liter", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "osmole per kilogram",
+        "surfaces": ["osmole per kilogram"],
+        "entity": "molar concentration",
+        "URI": "https://en.wikipedia.org/wiki/Plasma_osmolality",
+        "dimensions": [{"base": "mole", "power": 1}, {"base": "kilogram", "power": -1}],
+        "symbols": ["osmol/kg", "Osm/kg"]
+    },
+    {
+        "name": "milliosmole per kilogram",
+        "surfaces": ["milliosmole per kilogram"],
+        "entity": "molar concentration",
+        "URI": "https://en.wikipedia.org/wiki/Plasma_osmolality",
+        "dimensions": [{"base": "millimole", "power": 1}, {"base": "kilogram", "power": -1}],
+        "symbols": ["mOsmol/Kg", "mOsm/Kg"]
+    },
+    {
+        "name": "count per liter",
+        "surfaces": ["count per litre", "count per liter"],
+        "entity": "number concentration",
+        "URI": "https://en.wikipedia.org/wiki/Number_density",
+        "dimensions": [{"base": "liter", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "per cubic millimeter",
+        "surfaces": ["per cubic millimeter", "per cubic millimetre"],
+        "entity": "number concentration",
+        "URI": "https://en.wikipedia.org/wiki/Blood_cell",
+        "dimensions": [{"base": "millimeter", "power": -3}],
+        "symbols": ["/cu.mm", "/cu.mm.", "/cmm", "cu.mm", "cu.mm.", "cmm", "cumm"]
+    },
+    {
+        "name": "cubic meter per second",
+        "surfaces": ["cubic metre per second", "cubic meter per second", "cumec"],
+        "entity": "volumetric flow",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_metre_per_second",
+        "dimensions": [{"base": "meter", "power": 3}, {"base": "second", "power": -1}],
+        "symbols": []
+    },
+    {
+        "name": "cubic foot per second",
+        "surfaces": ["cubic foot per second"],
+        "entity": "volumetric flow",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_foot#Cubic_foot_per_minute",
+        "dimensions": [{"base": "foot", "power": 3}, {"base": "second", "power": -1}],
+        "symbols": ["CFPM", "CFM"]
+    },
+    {
+        "name": "standard cubic centimeter per minute",
+        "surfaces": ["standard cubic centimetre per minute"],
+        "entity": "volumetric flow",
+        "URI": "https://en.wikipedia.org/wiki/SCCM_(flow_unit)",
+        "dimensions": [{"base": "centimeter", "power": 3}, {"base": "minute", "power": -1}],
+        "symbols": ["SCCM"]
+    },
+    {
+        "name": "standard cubic feet per minute",
+        "surfaces": ["standard cubic feet per minute"],
+        "entity": "volumetric flow",
+        "URI": "https://en.wikipedia.org/wiki/Standard_cubic_feet_per_minute",
+        "dimensions": [{"base": "foot", "power": 3}, {"base": "minute", "power": -1}],
+        "symbols": ["SCFM"]
+    },
+    {
+        "name": "standard liter per minute",
+        "surfaces": ["standard litre per minute"],
+        "entity": "volumetric flow",
+        "URI": "https://en.wikipedia.org/wiki/Standard_litre_per_minute",
+        "dimensions": [{"base": "liter", "power": 1}, {"base": "minute", "power": -1}],
+        "symbols": ["SLM", "SLPM", "l/m", "l/min", "l/minute", "lmin"]
+    },
+    {
+        "name": "pound per hour",
+        "surfaces": ["pound per hour"],
+        "entity": "mass flow",
+        "URI": "https://en.wikipedia.org/wiki/Pound_per_hour",
+        "dimensions": [{"base": "pound-mass", "power": 1}, {"base": "hour", "power": -1}],
+        "symbols": ["PPH"]
+    },
+    {
+        "name": "darcy",
+        "surfaces": ["darcy", "darcy unit"],
+        "entity": "permeability",
+        "URI": "https://en.wikipedia.org/wiki/Darcy_(unit)",
+        "dimensions": [],
+        "symbols": []
+    }
+]

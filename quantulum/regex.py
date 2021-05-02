@@ -7,7 +7,7 @@
 import re
 
 # Quantulum
-from . import load as l
+from .classes import Reference as r
 
 UNITS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
          'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
@@ -105,8 +105,8 @@ REG_TXT = re.compile(TXT_PATTERN, re.VERBOSE | re.IGNORECASE)
 def get_units_regex():
     """Build a compiled regex object."""
     op_keys = sorted(OPERATORS.keys(), key=len, reverse=True)
-    unit_keys = sorted(l.UNITS.keys(), key=len, reverse=True)
-    symbol_keys = sorted(l.SYMBOLS.keys(), key=len, reverse=True)
+    unit_keys = sorted(r.UNITS.keys(), key=len, reverse=True)
+    symbol_keys = sorted(r.SYMBOLS.keys(), key=len, reverse=True)
 
     exponent = r'(?:(?:\^?\-?[0-9%s]*)(?:\ cubed|\ squared)?)(?![a-zA-Z])' % \
                SUPERSCRIPTS

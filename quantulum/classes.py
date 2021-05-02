@@ -1,11 +1,37 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """quantulum classes."""
+# Standard library
+import os
+
+# Dependencies
+import inflect
 
 
 ###############################################################################
-class Quantity(object):
+class Reference:
+    """
+    Class to wrap all loaded and processed units/entities,
+    plus the trained model
+    """
+    TOPDIR = os.path.dirname(__file__) or "."
+
+    PLURALS = inflect.engine()
+
+
+    ENTITIES, DERIVED_ENT = dict(), dict()
+    NAMES, UNITS, LOWER_UNITS, SYMBOLS, DERIVED_UNI = 5 * [dict()]
+    CATEGORY = ''
+
+    TFIDF_MODEL, CLF, TARGET_NAMES = None, None, None
+
+    INITIALIZED = False
+
+    def __init__(self):
+        pass
+
+###############################################################################
+class Quantity:
     """Class for a quantity (e.g. "4.2 gallons")."""
 
     def __init__(self, value=None, unit=None, surface=None, span=None,
@@ -36,7 +62,7 @@ class Quantity(object):
 
 
 ###############################################################################
-class Unit(object):
+class Unit:
     """Class for a unit (e.g. "gallon")."""
 
     def __init__(self, name=None, surfaces=None, entity=None, uri=None,
@@ -68,7 +94,7 @@ class Unit(object):
 
 
 ###############################################################################
-class Entity(object):
+class Entity:
     """Class for an entity (e.g. "volume")."""
 
     def __init__(self, name=None, dimensions=None, uri=None):

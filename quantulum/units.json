@@ -61,7 +61,7 @@
         "entity": "dimensionless",
         "URI": "https://en.wikipedia.org/wiki/Count_data",
         "dimensions": [],
-        "symbols": []
+        "symbols": ["#"]
     },
     {
         "name": "turn",
@@ -629,7 +629,7 @@
         "entity": "volume",
         "URI": "https://en.wikipedia.org/wiki/Cubic_metre",
         "dimensions": [{"base": "millimetre", "power": 3}],
-        "symbols": ["µl", "µL"]
+        "symbols": ["µl", "µL", "ul", "uL"]
     },
     {
         "name": "litre",

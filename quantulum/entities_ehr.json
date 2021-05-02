@@ -1,0 +1,167 @@
+[
+    {
+        "name": "dimensionless",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Dimensionless_quantity"
+    },
+    {
+        "name": "length",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Length"
+    },
+    {
+        "name": "mass",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Mass"
+    },
+    {
+        "name": "time",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Time"
+    },
+    {
+        "name": "temperature",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Temperature"
+    },
+    {
+        "name": "angle",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Angle"
+    },
+    {
+        "name": "amount of substance",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Amount_of_substance"
+    },
+    {
+        "name": "catalytic activity",
+        "dimensions": [{"base": "amount of substance", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Catalysis"
+    },
+    {
+        "name": "area",
+        "dimensions": [{"base": "length", "power": 2}],
+        "URI": "https://en.wikipedia.org/wiki/Area"
+    },
+    {
+        "name": "volume",
+        "dimensions": [{"base": "length", "power": 3}],
+        "URI": "https://en.wikipedia.org/wiki/Volume"
+    },
+    {
+        "name": "force",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "acceleration", "power": 1}],
+        "URI": "https://en.wikipedia.org/wiki/Force"
+    },
+    {
+        "name": "pressure",
+        "dimensions": [{"base": "force", "power": 1}, {"base": "area", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Pressure"
+    },
+    {
+        "name": "energy",
+        "dimensions": [{"base": "force", "power": 1}, {"base": "length", "power": 1}],
+        "URI": "https://en.wikipedia.org/wiki/Energy"
+    },
+    {
+        "name": "power",
+        "dimensions": [{"base": "energy", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Power_(physics)"
+    },
+    {
+        "name": "speed",
+        "dimensions": [{"base": "length", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Speed"
+    },
+    {
+        "name": "acceleration",
+        "dimensions": [{"base": "speed", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Acceleration"
+    },
+    {
+        "name": "density",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Density"
+    },
+    {
+        "name": "specific volume",
+        "dimensions": [{"base": "volume", "power": 1}, {"base": "mass", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Specific_volume"
+    },
+    {
+        "name": "moment of inertia",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "length", "power": 2}],
+        "URI": "https://en.wikipedia.org/wiki/Moment_of_inertia"
+    },
+    {
+        "name": "torque",
+        "dimensions": [{"base": "force", "power": 1}, {"base": "length", "power": 1}],
+        "URI": "https://en.wikipedia.org/wiki/Torque"
+    },
+    {
+        "name": "volumetric flow",
+        "dimensions": [{"base": "volume", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Volumetric_flow_rate"
+    },
+    {
+        "name": "mass flow",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Mass_flow_rate"
+    },
+    {
+        "name": "mass concentration",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Mass_concentration_(chemistry)"
+    },
+    {
+        "name": "number concentration",
+        "dimensions": [{"base": "dimensionless", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Number_density"
+    },
+    {
+        "name": "molar concentration",
+        "dimensions": [{"base": "amount of substance", "power": 1}, {"base": "volume", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Molar_concentration"
+    },
+    {
+        "name": "dynamic viscosity",
+        "dimensions": [{"base": "pressure", "power": 1}, {"base": "time", "power": 1}],
+        "URI": "https://en.wikipedia.org/wiki/Viscosity"
+    },
+    {
+        "name": "kinematic viscosity",
+        "dimensions": [{"base": "area", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Viscosity"
+    },
+    {
+        "name": "fluidity",
+        "dimensions": [{"base": "time", "power": -1}, {"base": "area", "power": 1}],
+        "URI": "https://en.wikipedia.org/wiki/Viscosity"
+    },
+    {
+        "name": "surface tension",
+        "dimensions": [{"base": "force", "power": 1}, {"base": "length", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Surface_tension"
+    },
+    {
+        "name": "permeability",
+        "dimensions": [{"base": "mass", "power": 1}, {"base": "pressure", "power": -1}, {"base": "time", "power": -1}, {"base": "area", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Permeation"
+    },
+    {
+        "name": "sound level",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Sound_level"
+    },
+    {
+        "name": "frequency",
+        "dimensions": [{"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Frequency"
+    },
+    {
+        "name": "instance frequency",
+        "dimensions": [{"base": "dimensionless", "power": 1}, {"base": "time", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Frequency"
+    }
+]

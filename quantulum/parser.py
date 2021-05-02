@@ -14,7 +14,7 @@ from . import load as l
 from . import regex as r
 from . import classes as c
 from . import classifier as clf
-
+from .classes import Reference as ref
 
 ###############################################################################
 def clean_surface(surface, span):
@@ -169,7 +169,7 @@ def get_unit_from_dimensions(dimensions, text):
     """Reconcile a unit based on its dimensionality."""
     key = l.get_key_from_dimensions(dimensions)
     try:
-        unit = l.DERIVED_UNI[key]
+        unit = ref.DERIVED_UNI[key]
     except KeyError:
         logging.debug('\tCould not find unit for: %s', key)
         unit = c.Unit(name=build_unit_name(dimensions),
@@ -186,7 +186,7 @@ def get_entity_from_dimensions(dimensions, text):
 
     Just based on the unit's dimensionality if the classifier is disabled.
     """
-    new_dimensions = [{'base': l.NAMES[i['base']].entity.name,
+    new_dimensions = [{'base': ref.NAMES[i['base']].entity.name,
                        'power': i['power']} for i in dimensions]
 
     final_dimensions = sorted(new_dimensions, key=lambda x: x['base'])
@@ -236,7 +236,7 @@ def get_unit(item, text):
 
     item_units = [item.group(i) for i in group_units if item.group(i)]
     if len(item_units) == 0:
-        unit = l.NAMES['dimensionless']
+        unit = ref.NAMES['dimensionless']
     else:
         dimensions, slash = [], False
         for group in sorted(group_units + group_operators):
@@ -309,7 +309,7 @@ def build_quantity(orig_text, text, item, values, unit, surface, span, uncert):
             try:
                 suffix = re.findall(r'\d(K|M|B|T)\b(.*?)$', surface)[0]
                 values = [i * r.SUFFIXES[suffix[0]] for i in values]
-                unit = l.UNITS[unit.dimensions[0]['base']][0]
+                unit = ref.UNITS[unit.dimensions[0]['base']][0]
                 if suffix[1]:
                     surface = surface[:surface.find(suffix[1])]
                     span = (span[0], span[1] - len(suffix[1]))
@@ -329,7 +329,7 @@ def build_quantity(orig_text, text, item, values, unit, surface, span, uncert):
 
     # Usually "1990s" stands for the decade, not the amount of seconds
     elif re.match(r'[1-2]\d\d0s', surface):
-        unit = l.NAMES['dimensionless']
+        unit = ref.NAMES['dimensionless']
         surface = surface[:-1]
         span = (span[0], span[1] - 1)
         logging.debug('\tCorrect for decade pattern')
@@ -340,7 +340,7 @@ def build_quantity(orig_text, text, item, values, unit, surface, span, uncert):
         if len(unit.dimensions) > 1:
             unit = get_unit_from_dimensions(unit.dimensions[:-1], orig_text)
         else:
-            unit = l.NAMES['dimensionless']
+            unit = ref.NAMES['dimensionless']
         surface = surface[:-3]
         span = (span[0], span[1] - 3)
         logging.debug('\tCorrect for "in" pattern')
@@ -349,7 +349,7 @@ def build_quantity(orig_text, text, item, values, unit, surface, span, uncert):
         if len(unit.dimensions) > 1:
             unit = get_unit_from_dimensions(unit.dimensions[:-1], orig_text)
         else:
-            unit = l.NAMES['dimensionless']
+            unit = ref.NAMES['dimensionless']
         surface = surface[:-1]
         span = (span[0], span[1] - 1)
         logging.debug('\tCorrect for quotes')
@@ -396,6 +396,8 @@ def parse(text, verbose=False):
     logging.basicConfig(format=log_format)
     root = logging.getLogger()
 
+    if ref.INITIALIZED == False:
+        raise Exception('Package is not initialized. Call init function.')
     if verbose:
         level = root.level
         root.setLevel(logging.DEBUG)
@@ -407,7 +409,6 @@ def parse(text, verbose=False):
     text = clean_text(text)
     values = extract_spellout_values(text)
     text, shifts = substitute_values(text, values)
-
     quantities = []
     for item in r.REG_DIM.finditer(text):
         groups = dict([i for i in item.groupdict().items() if i[1] and

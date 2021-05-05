@@ -8,12 +8,52 @@
         "symbols": []
     },
     {
+        "name": "score",
+        "surfaces": ["score", "point"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Test_score",
+        "dimensions": [],
+        "symbols": ["point", "points"]
+    },
+    {
+        "name": "stage",
+        "surfaces": ["stage"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Cancer_staging",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
+        "name": "potential of hydrogen",
+        "surfaces": ["pH"],
+        "entity": "acidity",
+        "URI": "https://en.wikipedia.org/wiki/PH",
+        "dimensions": [],
+        "symbols": ["pH"]
+    },
+    {
+        "name": "grade",
+        "surfaces": ["grade"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Grading_(tumors)",
+        "dimensions": [],
+        "symbols": []
+    },
+    {
         "name": "percentage",
         "surfaces": ["percentage", "percent"],
         "entity": "dimensionless",
         "URI": "https://en.wikipedia.org/wiki/Percentage",
         "dimensions": [],
-        "symbols": ["%", "pct", "pct."]
+        "symbols": ["%", "pct", "pct.", "per cent", "/100"]
+    },
+    {
+        "name": "ratio",
+        "surfaces": ["ratio"],
+        "entity": "dimensionless",
+        "URI": "https://en.wikipedia.org/wiki/Ratio",
+        "dimensions": [],
+        "symbols": []
     },
     {
         "name": "per mille",
@@ -33,19 +73,11 @@
     },
     {
         "name": "count",
-        "surfaces": ["instance", "time", "count"],
+        "surfaces": ["instance", "time", "count", "cell", "copy", "cigarettes"],
         "entity": "dimensionless",
         "URI": "https://en.wikipedia.org/wiki/Count_data",
         "dimensions": [],
-        "symbols": ["#"]
-    },
-    {
-        "name": "turn",
-        "surfaces": ["turn", "revolution", "cycle", "circle"],
-        "entity": "dimensionless",
-        "URI": "https://en.wikipedia.org/wiki/Turn_(geometry)",
-        "dimensions": [],
-        "symbols": []
+        "symbols": ["#", "cell", "cells", "copy", "copies", "cigarettes", "cigarette", "cigars", "cigar", "cigare", "cig", "cigs"]
     },
     {
         "name": "beat",
@@ -56,20 +88,12 @@
         "symbols": []
     },
     {
-        "name": "cell",
-        "surfaces": ["cell"],
+        "name": "breath",
+        "surfaces": ["breath"],
         "entity": "dimensionless",
-        "URI": "https://en.wikipedia.org/wiki/Complete_blood_count",
+        "URI": "https://en.wikipedia.org/wiki/Breathing",
         "dimensions": [],
-        "symbols": []
-    },
-    {
-        "name": "cigarettes",
-        "surfaces": ["cigarette", "cigare", "cig"],
-        "entity": "dimensionless",
-        "URI": "https://en.wikipedia.org/wiki/Cigarette",
-        "dimensions": [],
-        "symbols": []
+        "symbols": ["resp"]
     },
     {
         "name": "meter",
@@ -149,7 +173,7 @@
         "entity": "length",
         "URI": "https://en.wikipedia.org/wiki/Inch",
         "dimensions": [],
-        "symbols": ["in", "\"", "″"]
+        "symbols": ["in", "″", "''", "\""]
     },
     {
         "name": "kilogram",
@@ -224,15 +248,23 @@
         "symbols": ["cu m", "kL"]
     },
     {
+        "name": "deciliter",
+        "surfaces": ["deciliter"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Litre#SI_prefixes_applied_to_the_litre",
+        "dimensions": [],
+        "symbols": ["dl"]
+    },
+    {
         "name": "milliliter",
         "surfaces": ["milliliter", "cubic centimetre", "cubic centimeter", "millilitre"],
         "entity": "volume",
         "URI": "https://en.wikipedia.org/wiki/Cubic_centimetre",
         "dimensions": [{"base": "centimeter", "power": 3}],
-        "symbols": ["cc", "ccm", "mL", "ml", "ML"]
+        "symbols": ["ccm", "cc", "ml"]
     },
     {
-        "name": "cubic millimeter",
+        "name": "microliter",
         "surfaces": ["microliter", "microlitre", "cubic millimetre", "cubic millimeter"],
         "entity": "volume",
         "URI": "https://en.wikipedia.org/wiki/Cubic_metre",
@@ -240,20 +272,20 @@
         "symbols": ["µl", "µL", "ul", "uL"]
     },
     {
+        "name": "femtoliter",
+        "surfaces": ["femtoliter", "femtolitre", "cubic micrometer"],
+        "entity": "volume",
+        "URI": "https://en.wikipedia.org/wiki/Cubic_metre",
+        "dimensions": [{"base": "micrometer", "power": 3}],
+        "symbols": ["fl"]
+    },
+    {
         "name": "liter",
         "surfaces": ["litre", "liter", "cubic decimetre", "cubic decimeter"],
         "entity": "volume",
         "URI": "https://en.wikipedia.org/wiki/Litre",
         "dimensions": [{"base": "decimeter", "power": 3}],
-        "symbols": ["l", "L", "ltr"]
-    },
-    {
-        "name": "fluid ounce",
-        "surfaces": ["fluid ounce"],
-        "entity": "volume",
-        "URI": "https://en.wikipedia.org/wiki/Fluid_ounce",
-        "dimensions": [],
-        "symbols": ["fl oz", "oz fl", "floz", "ozfl"]
+        "symbols": ["l", "ltr"]
     },
     {
         "name": "cubic inch",
@@ -277,7 +309,7 @@
         "entity": "temperature",
         "URI": "https://en.wikipedia.org/wiki/Celsius",
         "dimensions": [],
-        "symbols": ["C", "°C", "'C", "deg C", "degC", "degrees C"]
+        "symbols": ["C", "°C", "'C", "deg C", "degC", "degrees C", "cel"]
     },
     {
         "name": "degree fahrenheit",
@@ -294,6 +326,14 @@
         "URI": "https://en.wikipedia.org/wiki/Square_metre",
         "dimensions": [{"base": "meter", "power": 2}],
         "symbols": ["sq m"]
+    },
+    {
+        "name": "body surface area",
+        "surfaces": ["body surface area"],
+        "entity": "area",
+        "URI": "https://en.wikipedia.org/wiki/Body_surface_area",
+        "dimensions": [],
+        "symbols": ["1.73m", "BSA"]
     },
     {
         "name": "square inch",
@@ -373,7 +413,7 @@
         "entity": "pressure",
         "URI": "https://en.wikipedia.org/wiki/Millimeter_of_mercury",
         "dimensions": [],
-        "symbols": ["mmHg", "mm Hg"]
+        "symbols": ["mmHg", "mm Hg", "mm.Hg"]
     },
     {
         "name": "joule",
@@ -421,7 +461,7 @@
         "entity": "time",
         "URI": "https://en.wikipedia.org/wiki/Second",
         "dimensions": [],
-        "symbols": ["s", "sec", "\"", "″"]
+        "symbols": ["s", "secs", "sec"]
     },
     {
         "name": "millisecond",
@@ -453,7 +493,7 @@
         "entity": "time",
         "URI": "https://en.wikipedia.org/wiki/Minute",
         "dimensions": [],
-        "symbols": ["min", "'", "′"]
+        "symbols": ["min", "mins", "'", "′"]
     },
     {
         "name": "hour",
@@ -461,7 +501,7 @@
         "entity": "time",
         "URI": "https://en.wikipedia.org/wiki/Hour",
         "dimensions": [],
-        "symbols": ["h", "hr"]
+        "symbols": ["h", "hr", "hrs"]
     },
     {
         "name": "day",
@@ -576,14 +616,6 @@
         "symbols": ["dB"]
     },
     {
-        "name": "cycle per second",
-        "surfaces": ["cycle per second"],
-        "entity": "instance frequency",
-        "URI": "https://en.wikipedia.org/wiki/Cycle_per_second",
-        "dimensions": [{"base": "turn", "power": 1}, {"base": "second", "power": -1}],
-        "symbols": ["cps"]
-    },
-    {
         "name": "beats per minute",
         "surfaces": ["beats per minute", "heartbeats per minute"],
         "entity": "instance frequency",
@@ -616,20 +648,12 @@
         "symbols": ["MHz", "M㎐"]
     },
     {
-        "name": "international unit",
-        "surfaces": ["international unit"],
-        "entity": "amount of substance",
-        "URI": "https://en.wikipedia.org/wiki/International_unit",
-        "dimensions": [],
-        "symbols": ["IU", "iU", "iu", "i.u."]
-    },
-    {
         "name": "milliIU",
         "surfaces": ["milliIU"],
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/International_unit",
         "dimensions": [],
-        "symbols": ["mIU", "MIU"]
+        "symbols": ["miu", "m.i.u", "mi.u"]
     },
     {
         "name": "kiloIU",
@@ -637,15 +661,23 @@
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/International_unit",
         "dimensions": [],
-        "symbols": ["kIU", "KIU"]
+        "symbols": ["kiu", "k.i.u", "ki.u"]
     },
     {
         "name": "unit",
-        "surfaces": ["unit"],
+        "surfaces": ["unit", "international unit"],
+        "entity": "amount of substance",
+        "URI": "https://en.wikipedia.org/wiki/International_unit",
+        "dimensions": [],
+        "symbols": ["i.u.", "iu", "i.u", "u", "au", "ua"]
+    },
+    {
+        "name": "microunit",
+        "surfaces": ["microunit"],
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
         "dimensions": [],
-        "symbols": ["U", "u"]
+        "symbols": ["microu"]
     },
     {
         "name": "milliunit",
@@ -653,15 +685,15 @@
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
         "dimensions": [],
-        "symbols": ["mU", "mu"]
+        "symbols": ["mu", "mua", "mau"]
     },
     {
         "name": "kilounit",
-        "surfaces": ["unit"],
+        "surfaces": ["unit", "arbitrary unit"],
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
         "dimensions": [],
-        "symbols": ["KU", "kU", "ku"]
+        "symbols": ["ku", "kau", "kua"]
     },
     {
         "name": "mole",
@@ -781,7 +813,7 @@
         "entity": "number concentration",
         "URI": "https://en.wikipedia.org/wiki/Blood_cell",
         "dimensions": [{"base": "millimeter", "power": -3}],
-        "symbols": ["/cu.mm", "/cu.mm.", "/cmm", "cu.mm", "cu.mm.", "cmm", "cumm"]
+        "symbols": ["/cu.mm", "/cu.mm.", "/cmm", "cu.mm", "cu.mm.", "cmm", "cumm", "/cumm", "cu mm"]
     },
     {
         "name": "cubic meter per second",

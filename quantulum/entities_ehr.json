@@ -163,5 +163,15 @@
         "name": "instance frequency",
         "dimensions": [{"base": "dimensionless", "power": 1}, {"base": "time", "power": -1}],
         "URI": "https://en.wikipedia.org/wiki/Frequency"
+    },
+    {
+        "name": "glomerular filtration rate",
+        "dimensions": [{"base": "volume", "power": 1}, {"base": "time", "power": -1}, {"base": "area", "power": -1}],
+        "URI": "https://en.wikipedia.org/wiki/Glomerular_filtration_rate"
+    },
+    {
+        "name": "acidity",
+        "dimensions": [],
+        "URI": "https://en.wikipedia.org/wiki/Acid"
     }
 ]

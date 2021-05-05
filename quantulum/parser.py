@@ -108,7 +108,7 @@ def get_values(item):
     """Extract value from regex hit."""
     fracs = r'|'.join(r.UNI_FRAC)
     value = item.group(2)
-    value = re.sub(r'(?<=\d)(%s)10(\^?(?=-)|\^)' % r.MULTIPLIERS, 'e', str(value))
+    value = re.sub(r'(?<=\d)(%s)10\^?(?=-?\d)' % r.MULTIPLIERS, 'e', str(value))
     value = re.sub(fracs, callback, value, re.IGNORECASE)
     value = re.sub(' +', ' ', value)
 

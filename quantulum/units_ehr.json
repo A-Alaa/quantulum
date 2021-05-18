@@ -648,22 +648,6 @@
         "symbols": ["MHz", "M㎐"]
     },
     {
-        "name": "milliIU",
-        "surfaces": ["milliIU"],
-        "entity": "amount of substance",
-        "URI": "https://en.wikipedia.org/wiki/International_unit",
-        "dimensions": [],
-        "symbols": ["miu", "m.i.u", "mi.u"]
-    },
-    {
-        "name": "kiloIU",
-        "surfaces": ["kiloIU"],
-        "entity": "amount of substance",
-        "URI": "https://en.wikipedia.org/wiki/International_unit",
-        "dimensions": [],
-        "symbols": ["kiu", "k.i.u", "ki.u"]
-    },
-    {
         "name": "unit",
         "surfaces": ["unit", "international unit"],
         "entity": "amount of substance",
@@ -685,7 +669,7 @@
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
         "dimensions": [],
-        "symbols": ["mu", "mua", "mau"]
+        "symbols": ["mu", "mua", "mau", "miu", "m.i.u", "mi.u"]
     },
     {
         "name": "kilounit",
@@ -693,7 +677,7 @@
         "entity": "amount of substance",
         "URI": "https://en.wikipedia.org/wiki/Amount_of_substance",
         "dimensions": [],
-        "symbols": ["ku", "kau", "kua"]
+        "symbols": ["ku", "kau", "kua", "kiu", "k.i.u", "ki.u"]
     },
     {
         "name": "mole",
